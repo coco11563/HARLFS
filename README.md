@@ -49,7 +49,17 @@ The sources of all 21 datasets are given in **Section 5.1 (Dataset Description)*
 
 `spectf`, `svmguide3`, `german_credit`, `credit_default`, `spam_base`, `megawatt1`, `ionosphere`, `openml_586`, `openml_589`, `openml_607`, `openml_616`, `openml_618`, `openml_620`, `openml_637`, `mice_protein`, `coil-20`, `mnist`, `otto`, `jannis`, `cao`, `han`
 
-To better demonstrate our model, this repository already includes the `spam_base` dataset together with its feature descriptions and LLM embeddings. All datasets (with pre-computed LLM embeddings) can be downloaded from [Dropbox](https://www.dropbox.com/scl/fi/q4w7nthjpzpa05x326c0o/HARLFS-code.zip?rlkey=xw2pw6nd4ngigbaoharhu7ko1&st=qlg6syjo&dl=0). After downloading, copy the files into `./data`.
+To better demonstrate our model, this repository already includes the `spam_base` dataset together with its feature descriptions and LLM embeddings. All 21 datasets are hosted on Hugging Face: [Shaow/Feature_Selection_Dataset](https://huggingface.co/datasets/Shaow/Feature_Selection_Dataset). Download the `.hdf` files and copy them into `./data`, e.g.:
+
+```python
+from huggingface_hub import snapshot_download
+
+snapshot_download(
+    repo_id="Shaow/Feature_Selection_Dataset",
+    repo_type="dataset",
+    local_dir="./data",
+)
+```
 
 ## Requirements
 
